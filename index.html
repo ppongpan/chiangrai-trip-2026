@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เที่ยว+กิน เชียงราย → กรุงเทพฯ | 22–25 พ.ย. 2569</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --asphalt:#121410; --asphalt-2:#1A1D16; --card:#22261E; --card-2:#2A2F25;
+  --line:#3B4233; --sign:#0F5138; --sign-lit:#1A7A55;
+  --paint:#E9C53C; --chilli:#D8422C; --lotus:#7FB3E0;
+  --rice:#EFEDE2; --muted:#9AA18C; --r:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--asphalt);color:var(--rice);
+  font-family:'IBM Plex Sans Thai',system-ui,sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 80px}
+
+header{padding:36px 0 22px}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--paint);margin:0 0 14px}
+.sign{background:var(--sign);border:3px solid #EFEDE2;border-radius:6px;padding:18px 20px 16px;position:relative}
+.sign::after{content:"";position:absolute;inset:6px;border:1px solid rgba(239,237,226,.35);border-radius:3px;pointer-events:none}
+.sign h1{font-family:'Bai Jamjuree',sans-serif;font-weight:700;font-size:clamp(25px,6.6vw,40px);line-height:1.12;margin:0}
+.sign .arrow{color:var(--paint)}
+.sign .sub{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.06em;
+  color:rgba(239,237,226,.82);margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.lede{color:var(--muted);margin:18px 0 0;font-size:14.5px}
+.lede b{color:var(--rice);font-weight:600}
+
+.legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.legend span{font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid var(--line);
+  border-radius:5px;padding:3px 9px;color:var(--muted)}
+.legend i{font-style:normal;font-weight:600}
+.legend .l-see i{color:var(--lotus)} .legend .l-eat i{color:var(--paint)} .legend .l-bed i{color:#8FD6A8}
+
+.alert{margin-top:18px;border-left:4px solid var(--chilli);background:#2A1B17;padding:14px 16px;border-radius:0 var(--r) var(--r) 0}
+.alert h3{margin:0 0 4px;font-family:'Bai Jamjuree',sans-serif;font-size:15px;color:#FF8A72}
+.alert p{margin:0;font-size:14px;color:#E4D7D2}
+
+nav{position:sticky;top:0;z-index:20;background:rgba(18,20,16,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);margin:26px -16px 0;padding:10px 16px;
+  display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-family:'Bai Jamjuree',sans-serif;
+  font-weight:600;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;white-space:nowrap}
+nav a:hover,nav a:focus-visible{color:var(--rice);border-color:var(--paint)}
+
+.day{padding-top:38px}
+.day-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.day-num{font-family:'Bai Jamjuree',sans-serif;font-weight:700;font-size:13px;background:var(--paint);color:#12140F;padding:2px 9px;border-radius:4px}
+.day-head h2{font-family:'Bai Jamjuree',sans-serif;font-weight:700;font-size:21px;margin:0}
+.day-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);
+  border-top:1px dashed var(--line);padding-top:8px;margin-bottom:22px;display:flex;flex-wrap:wrap;gap:4px 16px}
+
+.rail{position:relative;padding-left:70px}
+.rail::before{content:"";position:absolute;left:28px;top:6px;bottom:6px;width:2px;
+  background:repeating-linear-gradient(to bottom,var(--line) 0 10px,transparent 10px 20px)}
+.stop{position:relative;margin-bottom:18px}
+.km{position:absolute;left:-70px;top:2px;width:56px;text-align:center;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;line-height:1.3;
+  color:var(--rice);background:var(--sign);border:1.5px solid var(--rice);border-radius:4px;padding:5px 2px 6px}
+.km b{display:block;font-size:13px;font-weight:600;color:var(--paint)}
+.km.see{background:#123047;border-color:#8FB6D6} .km.see b{color:var(--lotus)}
+.km.plain{background:var(--asphalt-2);border-color:var(--line);color:var(--muted)} .km.plain b{color:var(--muted)}
+
+.time{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--paint);letter-spacing:.03em;display:block;margin-bottom:5px}
+.time.see{color:var(--lotus)}
+.time .dur{color:var(--muted);font-weight:400}
+
+.drive{margin:-6px 0 16px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#7C8570;
+  display:flex;align-items:center;gap:8px}
+.drive::before{content:"";width:14px;height:1px;background:var(--line)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 15px}
+.card.sight{background:#1B2229;border-color:#2E4453}
+.card.stopover{background:transparent;border-style:dashed}
+.card h3{font-family:'Bai Jamjuree',sans-serif;font-weight:600;font-size:17px;margin:0 0 2px;line-height:1.3}
+.tagline{color:var(--muted);font-size:13.5px;margin:0 0 10px}
+.dish{margin:0 0 10px;font-size:14.5px}
+.dish span{color:var(--paint)}
+.card.sight .dish span{color:var(--lotus)}
+
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+.f{background:var(--card-2);border:1px solid var(--line);border-radius:5px;padding:3px 8px;color:var(--muted)}
+.card.sight .f{background:#223039;border-color:#2E4453}
+.f b{color:var(--rice);font-weight:500}
+.f.star b{color:var(--paint)}
+.card.sight .f.star b{color:var(--lotus)}
+.f.baht b{color:#8FD6A8}
+
+.flag{display:inline-block;font-family:'Bai Jamjuree',sans-serif;font-weight:600;font-size:11.5px;padding:2px 8px;border-radius:4px;margin-bottom:8px}
+.flag.book{background:var(--chilli);color:#fff}
+.flag.early{background:var(--paint);color:#12140F}
+.flag.free{background:var(--sign-lit);color:#fff}
+.flag.opt{background:#2E4453;color:var(--lotus)}
+
+.backup{border-top:1px dashed var(--line);margin-top:10px;padding-top:9px;font-size:13.5px;color:var(--muted)}
+.backup strong{display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:#7C8570;margin-bottom:5px;font-weight:500}
+.backup ul{margin:0;padding-left:16px}
+.backup li{margin-bottom:4px}
+.backup em{color:var(--rice);font-style:normal;font-weight:600}
+.shut{color:#FF8A72}
+
+.bed{background:linear-gradient(180deg,var(--card-2),var(--card));border-color:#4A5240}
+.bed .why{font-size:13.5px;color:var(--muted);margin:8px 0 0}
+
+.panel{margin-top:44px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.panel h2{font-family:'Bai Jamjuree',sans-serif;font-size:16px;margin:0;background:var(--card-2);padding:12px 15px;border-bottom:1px solid var(--line)}
+.panel .body{padding:14px 15px}
+.row{display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px;align-items:flex-start}
+.row:last-child{border-bottom:0}
+.row .when{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--paint);flex:0 0 74px;padding-top:2px}
+.row .what b{font-weight:600}
+.row .what span{color:var(--muted);display:block;font-size:13px}
+
+footer{margin-top:40px;color:#6E7663;font-size:12.5px;line-height:1.7}
+
+@media(max-width:520px){
+  .rail{padding-left:56px}
+  .rail::before{left:21px}
+  .km{left:-56px;width:44px;font-size:9px}
+  .km b{font-size:12px}
+}
+@media(prefers-reduced-motion:no-preference){
+  .stop{animation:rise .5s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">เที่ยว + กิน · 4 วัน 3 คืน</p>
+  <div class="sign">
+    <h1>เชียงราย <span class="arrow">→</span> กรุงเทพฯ</h1>
+    <div class="sub"><span>อา. 22 – พ. 25 พ.ย. 2569</span><span>~965 กม.</span><span>เลี่ยงเชียงใหม่</span></div>
+  </div>
+  <p class="lede">ตารางรายชั่วโมงที่ <b>สลับที่เที่ยวกับมื้ออาหารตามภูมิศาสตร์</b> ไม่ต้องย้อนทาง ทุกจุดมีเวลาที่ควรใช้ ค่าเข้า และสิ่งที่ต้องดูจริง ๆ กำกับไว้</p>
+  <div class="legend">
+    <span class="l-see"><i>■</i> ที่เที่ยว</span>
+    <span class="l-eat"><i>■</i> มื้ออาหาร / คาเฟ่</span>
+    <span class="l-bed"><i>■</i> ที่พัก</span>
+    <span>เส้นประ = ขับรถ / พัก</span>
+  </div>
+
+  <div class="alert">
+    <h3>คืนวันอังคารที่ 24 คือคืนลอยกระทง</h3>
+    <p>ตรงกับงาน “เผาเทียนเล่นไฟ” ในอุทยานประวัติศาสตร์สุโขทัยพอดี — ทั้งทริปวางให้ไปถึงสุโขทัยก่อนค่ำวันนั้น <b>จองที่พักเมืองเก่าสุโขทัยเป็นอย่างแรก</b></p>
+  </div>
+</header>
+
+<nav>
+  <a href="#d1">วัน 1 · เชียงราย</a>
+  <a href="#d2">วัน 2 · ร่องขุ่น–พะเยา–ลำปาง</a>
+  <a href="#d3">วัน 3 · ลำปางหลวง–ศรีสัชนาลัย</a>
+  <a href="#d4">วัน 4 · สุโขทัย–กลับบ้าน</a>
+  <a href="#book">ต้องจอง</a>
+  <a href="#closed">ร้านปิด</a>
+</nav>
+
+<!-- ================= DAY 1 ================= -->
+<section class="day" id="d1">
+  <div class="day-head"><span class="day-num">วัน 1</span><h2>อาทิตย์ 22 พ.ย. · เชียงราย</h2></div>
+  <div class="day-meta"><span>ขับ ~25 กม. ในเมือง</span><span>2 วัด + 1 แลนด์มาร์ก</span><span>ค้างเชียงราย</span></div>
+
+  <div class="rail">
+
+    <div class="stop">
+      <div class="km plain"><b>14:00</b>งาน</div>
+      <span class="time">14:00 – 16:30</span>
+      <div class="card stopover">
+        <h3>งานแต่งงาน</h3>
+        <p class="tagline">กินหนักมาแล้วในงาน มื้อเย็นจึงเลื่อนไป 18:45 และเอาเวลาช่วงเย็นไปเก็บวัดสองแห่งที่อยู่ทางเหนือของเมืองทั้งคู่</p>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 8 กม. · 15 นาที · ขึ้นเหนือข้ามแม่น้ำกก</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>1</div>
+      <span class="time see">16:50 – 17:40 <span class="dur">· ใช้เวลา 50 นาที</span></span>
+      <div class="card sight">
+        <h3>วัดห้วยปลากั้ง</h3>
+        <p class="tagline">เจ้าแม่กวนอิมองค์ขาวสูง 79 เมตร มองเห็นจากถนนใหญ่ ขึ้นลิฟต์ไปถึงชั้น 25 ในเศียรได้ วิวเมืองเชียงรายตอนแดดเย็นสวยที่สุด</p>
+        <p class="dish"><span>ต้องดู:</span> ขึ้นลิฟต์ชั้น 25 ในองค์กวนอิม (งานแกะสลักไม้ด้านในละเอียดมาก) · เจดีย์พบโชคธรรมเจดีย์ 9 ชั้นแบบจีน–ล้านนา</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 16,632 รีวิว</span>
+          <span class="f">เปิด <b>07:00–21:00 ทุกวัน</b></span>
+          <span class="f baht">เข้าฟรี · ลิฟต์ <b>40฿</b></span>
+          <span class="f">8 กม. จากตัวเมือง</span>
+        </div>
+        <span class="flag free">ที่จอดรถฟรี กว้าง</span>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 6 กม. · 12 นาที</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>2</div>
+      <span class="time see">17:55 – 18:35 <span class="dur">· ใช้เวลา 40 นาที</span></span>
+      <div class="card sight">
+        <h3>วัดร่องเสือเต้น (Blue Temple)</h3>
+        <p class="tagline">จงใจจัดไว้ช่วงพลบค่ำ — เป็นเวลาที่สีน้ำเงินเข้มตัดกับไฟส่องทองได้สวยกว่ากลางวันมาก และคนบางตาแล้ว</p>
+        <p class="dish"><span>ต้องดู:</span> พระประธานสีขาวในวิหารสีน้ำเงินเรืองแสง · หอระฆังกับน้ำตกจำลองด้านซ้าย · อาคารสุดท้ายเป็นพิพิธภัณฑ์ติดแอร์ มีหนังสั้นเล่าประวัติ</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.6</b> · 26,993 รีวิว</span>
+          <span class="f">เปิด <b>07:00–20:00 ทุกวัน</b></span>
+          <span class="f baht">ไม่มีค่าเข้า</span>
+          <span class="f">2 กม. จากที่พัก</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">ขับกลับเข้าเมือง 3 กม. · 10 นาที</div>
+
+    <div class="stop">
+      <div class="km"><b>มื้อ</b>เย็น</div>
+      <span class="time">18:45 – 19:55</span>
+      <div class="card">
+        <h3>Homchan (หอมจันทร์)</h3>
+        <p class="tagline">อาหารเหนือ–ไทยในบ้านไม้มีสวนและน้ำพุ คนท้องถิ่นใช้เลี้ยงแขก เหมาะกับคืนหลังงานแต่ง</p>
+        <p class="dish"><span>สั่ง:</span> ข้าวผัดปู · ปูนิ่มทอด · ข้าวซอย · ยำไส้อั่ว · ปิดท้ายด้วยชาดอกไม้</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.8</b> · 1,185 รีวิว</span>
+          <span class="f baht">~<b>150–350฿</b>/คน</span>
+          <span class="f">เปิด <b>09:30–22:00 ทุกวัน</b></span>
+          <span class="f">1.2 กม. จากที่พัก</span>
+        </div>
+        <span class="flag book">โทรเช็กคิวก่อน · 097-162-4532</span>
+        <div class="backup">
+          <strong>ถ้าเต็ม / คิวยาว</strong>
+          <ul>
+            <li><em>ด่อง–Dông</em> ★4.7 (133) · 11:00–23:00 ทุกวัน · อาหารเหนือจานเล็กแบบอิซากายะ ต้มแซ่บหมู แหนม ~80–150฿/คน · 700 ม.</li>
+            <li><em>ลาบลุงน้อย</em> ★4.9 (260) · 11:00–20:00 <span class="shut">ปิดอังคาร</span> · จานละ 60–70฿ · 5 กม.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">เดิน 400 ม.</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>3</div>
+      <span class="time see">20:00 <span class="dur">· โชว์ 10 นาที</span></span>
+      <div class="card sight">
+        <h3>หอนาฬิกาเฉลิมพระเกียรติ · โชว์แสงสีเสียง</h3>
+        <p class="tagline">ผลงานอาจารย์เฉลิมชัยชิ้นเดียวกับวัดร่องขุ่น เล่นโชว์วันละ 3 รอบ ดูฟรีจากริมถนน จับเวลาให้ตรงรอบสองทุ่มพอดีหลังมื้อเย็น</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.4</b> · 9,074 รีวิว</span>
+          <span class="f">โชว์ <b>19:00 · 20:00 · 21:00</b></span>
+          <span class="f baht">ฟรี</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km"><b>ของ</b>หวาน</div>
+      <span class="time">20:15 – 20:50</span>
+      <div class="card">
+        <h3>Waan Jai / หวานใจ (Sweet Heart)</h3>
+        <p class="tagline">ร้านขนมไทยเจ้าดัง เดินต่อจากหอนาฬิกาได้เลย — ปิดสามทุ่ม อย่าปล่อยให้เลยเวลา</p>
+        <p class="dish"><span>สั่ง:</span> ข้าวเหนียวมะม่วง ขอเป็นไอศกรีมมะพร้าวแทนไอติมมะม่วง (อร่อยกว่า) · ขนมกะทิสด</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 447 รีวิว</span>
+          <span class="f baht">~<b>60–120฿</b></span>
+          <span class="f">เปิด <b>11:30–21:00 ทุกวัน</b></span>
+          <span class="f">600 ม. เดินได้</span>
+        </div>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>ศรีวรรณขนมไทย</em> ★4.7 (41) · 09:00–19:00 ทุกวัน · ไอติมมะพร้าว 3 ท็อปปิ้ง 35฿ ขนมไทยชิ้นละ 10฿ · 200 ม. จากที่พัก</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km plain"><b>เดิน</b>ย่อย</div>
+      <span class="time">21:00 – 21:45</span>
+      <div class="card stopover">
+        <h3>ไนท์บาซาร์เชียงราย</h3>
+        <p class="tagline">อยู่หลังโรงแรมพอดี เปิดทุกคืน มีลานอาหารและดนตรีสด ไว้สำรวจของฝากรอบแรกก่อนตัดสินใจซื้อ</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km"><b>คืน</b>1</div>
+      <span class="time">พักคืนที่ 1</span>
+      <div class="card bed">
+        <h3>Le Patta Hotel</h3>
+        <p class="tagline">เลือกเพราะเป็นจุดที่เดินถึงทั้งของอร่อยและหอนาฬิกาได้ในคืนเดียว</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 1,080 รีวิว</span>
+          <span class="f">ใกล้หอนาฬิกา</span>
+          <span class="f">มีสระ + ที่จอดรถ</span>
+        </div>
+        <p class="why">รัศมี 700 ม. เดินถึง: Homchan · หวานใจ · Cozy Dough · ศรีวรรณขนมไทย · หอนาฬิกา · ไนท์บาซาร์ · โจ๊กตลาดศิริกรณ์ (เช้า)</p>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>Nakaraj Princess</em> ★4.4 (303) · ติดถนนคนเดิน ห้องกว้าง ราคาย่อมเยา</li>
+            <li><em>Sleepy House</em> ★4.8 (581) · เกสต์เฮาส์เล็ก 11 ห้อง เดิน 5 นาทีถึงไนท์บาซาร์</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= DAY 2 ================= -->
+<section class="day" id="d2">
+  <div class="day-head"><span class="day-num">วัน 2</span><h2>จันทร์ 23 พ.ย. · ร่องขุ่น → สิงห์ปาร์ค → พะเยา → ลำปาง</h2></div>
+  <div class="day-meta"><span>ขับ ~275 กม.</span><span>~4 ชม. 30 บนถนน</span><span>วันจันทร์ = ร้านดังปิดหลายร้าน</span></div>
+
+  <div class="rail">
+
+    <div class="stop">
+      <div class="km"><b>มื้อ</b>เช้า</div>
+      <span class="time">07:00 – 07:45</span>
+      <div class="card">
+        <h3>โกดังอาหารเช้า (บายพาสวงแหวนตะวันออก)</h3>
+        <p class="tagline">โจ๊กคะแนนสูงสุดในเชียงราย เปิดเฉพาะเช้าวันธรรมดา — วันจันทร์คือจังหวะพอดี และอยู่บนทางออกเมืองไปร่องขุ่น</p>
+        <p class="dish"><span>สั่ง:</span> โจ๊กจักรพรรดิใส่ครบ · ไข่ลวก · มีชาร้อนให้ฟรีตอนเช้า</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.9</b> · 294 รีวิว</span>
+          <span class="f baht">~<b>40–70฿</b></span>
+          <span class="f">เปิด <b>06:30–10:30</b></span>
+          <span class="f"><span class="shut">ปิด ส.–อา.</span></span>
+        </div>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>โจ๊ก ตลาดศิริกรณ์</em> ★4.5 (47) · 05:00–15:00 ทุกวัน · โจ๊กไข่ 30฿ + ปาท่องโก๋จิ้มกาแฟ · เดินจากที่พักได้</li>
+            <li><em>Nanthaka Rice Porridge</em> ★4.3 (452) · 06:00–21:00 ทุกวัน · ร้านแอร์ นั่งสบาย</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 13 กม. · 20 นาที · ลงใต้ตามพหลโยธิน (เช็คเอาต์ก่อนออก)</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>4</div>
+      <span class="time see">08:05 – 09:20 <span class="dur">· ใช้เวลา 75 นาที</span></span>
+      <div class="card sight">
+        <h3>วัดร่องขุ่น (White Temple)</h3>
+        <p class="tagline">ไฮไลต์ของทริป — ไปให้ถึงตอนเปิด 08:00 เพื่อเป็นกลุ่มแรกก่อนรถทัวร์ลง ถ้าไปสาย 09:30 ขึ้นไปคนจะเยอะจนถ่ายรูปสะพานไม่ได้เลย</p>
+        <p class="dish"><span>ต้องดู:</span> สะพานวัฏสงสารกับมือหลายร้อยมือที่ยื่นขึ้นจากนรก · จิตรกรรมฝาผนังร่วมสมัยในอุโบสถ (ห้ามถ่ายรูป ต้องเดินดูช้า ๆ) · ห้องน้ำสีทองฝั่งตรงข้าม · หอศิลป์แสดงงานอาจารย์เฉลิมชัย</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.6</b> · 25,117 รีวิว</span>
+          <span class="f">เปิด <b>08:00–17:00 ทุกวัน</b></span>
+          <span class="f baht">คนไทยฟรี · ต่างชาติ <b>100฿</b></span>
+          <span class="f">13 กม. จากตัวเมือง</span>
+        </div>
+        <span class="flag early">แต่งกายสุภาพ · ถอดรองเท้าก่อนเข้าอุโบสถ</span>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 8 กม. · 12 นาที</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>5</div>
+      <span class="time see">09:35 – 11:20 <span class="dur">· ใช้เวลา 1 ชม. 45</span></span>
+      <div class="card sight">
+        <h3>สิงห์ปาร์ค เชียงราย (ไร่บุญรอด)</h3>
+        <p class="tagline">ที่เดียวได้ทั้งไร่ชา สวนดอกไม้ และสวนสัตว์เปิด — ซื้อตั๋วรถรางแล้วลงตามจุด ไม่ต้องเดินตากแดด</p>
+        <p class="dish"><span>เส้นทางรถราง 4 จุด:</span> ทะเลสาบหงส์ → มินิซู ให้อาหารยีราฟกับม้าลาย → ไร่ชาอู่หลง มีชิมชาฟรี → ภูภิรมย์ จุดชมวิวไร่ชา</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.4</b> · 13,057 รีวิว</span>
+          <span class="f">เปิด <b>08:00–18:00 ทุกวัน</b></span>
+          <span class="f baht">ตั๋ว+รถราง ~<b>150฿</b></span>
+          <span class="f">พื้นที่กว้างมาก</span>
+        </div>
+        <div class="backup">
+          <strong>อยากเปลี่ยนเป็นอย่างอื่น</strong>
+          <ul>
+            <li><em>พิพิธภัณฑ์บ้านดำ</em> ★4.1 (13,822) · 09:00–17:00 ทุกวัน · ค่าเข้า 80฿ · บ้านไม้สีดำ 40 หลังของอาจารย์ถวัลย์ ดัชนี · <b>แต่อยู่เหนือเมือง 20 กม.</b> ต้องย้อนทางกลับ ใช้แทนสิงห์ปาร์คได้ถ้าชอบงานศิลปะมากกว่าธรรมชาติ (เพิ่มเวลาเดินทางรวม ~50 นาที)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">ขับกลับเข้าเมือง 12 กม. · 20 นาที</div>
+
+    <div class="stop">
+      <div class="km"><b>มื้อ</b>เที่ยง</div>
+      <span class="time">11:45 – 12:45</span>
+      <div class="card">
+        <h3>AROI DEE KHAO SOI</h3>
+        <p class="tagline">ได้ทั้งข้าวซอยและน้ำเงี้ยวในร้านเดียว — สำคัญมาก เพราะเจ้าน้ำเงี้ยวดัง ๆ ของเชียงรายปิดวันจันทร์กันหมด</p>
+        <p class="dish"><span>สั่ง:</span> ข้าวซอยไก่ 1 + น้ำเงี้ยวเส้นเล็ก 1 แล้วแบ่งกัน · เครื่องเคียงและน้ำเติมฟรี · ชาไทยเย็น</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.8</b> · 63 รีวิว</span>
+          <span class="f baht">~<b>50–70฿</b>/ชาม</span>
+          <span class="f">เปิด <b>09:00–15:00</b></span>
+          <span class="f"><span class="shut">ปิดศุกร์</span></span>
+        </div>
+        <div class="backup">
+          <strong>สำรอง (เปิดวันจันทร์ทั้งคู่)</strong>
+          <ul>
+            <li><em>Khao Soi Pa Yao</em> ★4.7 (190) · 09:30–16:00 ทุกวัน · ข้าวซอยเนื้อ ~80฿ ผักดองเติมฟรี · ทางบ้านดู่ 7 กม.</li>
+            <li><em>ข้าวซอยเฒ่าแก่เอก</em> ★4.3 (549) · 08:30–15:30 ทุกวัน · ไส้อั่วเด็ดมาก มีห้องแอร์ · 3 กม.</li>
+          </ul>
+          <p style="margin:8px 0 0"><span class="shut">จันทร์ปิด:</span> น้ำเงี้ยวป้าสุข · ร้านกิ่งกะไข่ · Ma Long Der</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 95 กม. · 1 ชม. 30 · พหลโยธินสาย 1 ลงพะเยา</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>6</div>
+      <span class="time see">14:25 – 15:05 <span class="dur">· ใช้เวลา 40 นาที</span></span>
+      <div class="card sight">
+        <h3>วัดศรีโคมคำ · พะเยา</h3>
+        <p class="tagline">วัดริมกว๊านพะเยาที่ต้องแวะถ้าผ่าน — ประดิษฐานพระเจ้าตนหลวง พระประธานศิลปะล้านนาที่ใหญ่ที่สุดในภาคเหนือ และเดินทะลุหลังวัดออกไปเจอกว๊านได้เลย</p>
+        <p class="dish"><span>ต้องดู:</span> พระเจ้าตนหลวงในวิหารหลวง · อุโบสถกลางน้ำที่มีสะพานเชื่อม จิตรกรรมด้านในสวยมาก · สวนประติมากรรมพุทธนรกด้านหลัง</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 4,051 รีวิว</span>
+          <span class="f">เปิด <b>07:00–18:30 ทุกวัน</b></span>
+          <span class="f baht">ไม่มีค่าเข้า</span>
+          <span class="f">ติดกว๊านพะเยา</span>
+        </div>
+        <div class="backup">
+          <strong>ถ้ามีเวลาเหลือ (+45 นาที)</strong>
+          <ul>
+            <li><em>วัดติโลกอาราม</em> ★4.5 (583) · 08:30–17:00 ทุกวัน · วัดจมอยู่กลางกว๊าน ต้องนั่งเรือไป · เรือ 50฿/คน ถ้าครบ 6 คน ไม่ครบเหมาลำ 300฿ · เป็นประสบการณ์ที่หาที่อื่นไม่ได้ แต่ทำให้ถึงลำปางค่ำขึ้น</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km"><b>คา</b>เฟ่</div>
+      <span class="time">15:10 – 15:50</span>
+      <div class="card">
+        <h3>The Lake Cafe · ริมกว๊านพะเยา</h3>
+        <p class="tagline">พักขาครึ่งทาง เลือกร้านนี้เพราะเปิดทุกวัน (คู่แข่งริมกว๊านหลายร้านปิดจันทร์)</p>
+        <p class="dish"><span>สั่ง:</span> เอสเพรสโซโทนิก · ชีสเค้ก หรือ บานอฟฟี่ · นั่งโซนนอกมองกว๊าน</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.4</b> · 352 รีวิว</span>
+          <span class="f baht">~<b>80–150฿</b></span>
+          <span class="f">เปิด <b>08:00–19:00 ทุกวัน</b></span>
+        </div>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>Chidlom Phayao</em> ★4.3 (914) · 10:30–23:00 ทุกวัน · ถ้าอยากกินจริงจังริมน้ำ</li>
+            <li><em>Aurora Restaurant</em> ★4.3 (891) · 11:00–21:30 ทุกวัน · วิวพระอาทิตย์ตกดีที่สุดในพะเยา</li>
+            <li><span class="shut">A Ga Li Go อิงกว๊าน ปิดวันจันทร์</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 130 กม. · 2 ชม. · สาย 1 ผ่านงาว ลงลำปาง</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>7</div>
+      <span class="time see">18:00 – 18:40 <span class="dur">· ใช้เวลา 40 นาที</span></span>
+      <div class="card sight">
+        <h3>วัดพระแก้วดอนเต้าสุชาดาราม · ลำปาง</h3>
+        <p class="tagline">วัดอายุกว่าพันปีที่เคยประดิษฐานพระแก้วมรกตนานถึง 32 ปีก่อนย้ายไปเชียงใหม่ — พระธาตุทององค์ใหญ่สะท้อนแสงเย็นสวยมาก และเปิดถึงหนึ่งทุ่ม ทันพอดีตอนถึงลำปาง</p>
+        <p class="dish"><span>ต้องดู:</span> พระธาตุทองทรงล้านนา · มณฑปศิลปะพม่าที่ประดับกระจกทั้งหลัง · พระนอนองค์ใหญ่</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.6</b> · 2,037 รีวิว</span>
+          <span class="f">เปิด <b>05:00–19:00 ทุกวัน</b></span>
+          <span class="f baht">ไม่มีค่าเข้า</span>
+          <span class="f">2 กม. จากตลาดเก่า</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km"><b>มื้อ</b>เย็น</div>
+      <span class="time">18:50 – 20:20</span>
+      <div class="card">
+        <h3>แกงหอม (Kenghom)</h3>
+        <p class="tagline">อาหารเหนือแบบเรียบเรียงใหม่ จานสวย มีดนตรีโฟล์กสด เป็นมื้อเย็นที่ดีที่สุดของลำปาง</p>
+        <p class="dish"><span>สั่ง:</span> ชุดน้ำพริกลำปาง (กะปิคั่ว + น้ำพริกหนุ่ม + น้ำพริกอ่อง) · ไส้อั่ว · แกงฮังเล · แคบหมู</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 1,886 รีวิว</span>
+          <span class="f baht">~<b>150–300฿</b>/คน</span>
+          <span class="f">เปิด <b>10:30–22:00 ทุกวัน</b></span>
+        </div>
+        <span class="flag book">ควรจอง · 081-638-8203</span>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>ข้าวต้มเครื่อง By อร่อยบาทเดียว</em> ★4.7 (50) · 16:00–23:00 <span class="shut">ปิดอังคาร</span> (จันทร์เปิด) · ปลากะพงทอดราดพริก ยำไข่</li>
+            <li><em>ข้าวต้มข้างสวน</em> ★4.5 · 16:00–24:00 ทุกวัน · ข้าวต้มฟรี ไก่ทอดพริกเกลือ 90฿</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>8</div>
+      <span class="time see">20:30 – 21:15 <span class="dur">· เดินเล่น</span></span>
+      <div class="card sight">
+        <h3>สะพานรัษฎาภิเศก + ถนนตลาดเก่า</h3>
+        <p class="tagline">สะพานขาวคอนกรีตอายุร้อยกว่าปีที่รอดจากสงครามมาได้ ตอนกลางคืนเปิดไฟสวย เดินลงทางเดินริมน้ำวังด้านล่างจะเจองานศิลปะบนกำแพงตลอดแนว</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.5</b> · 199 รีวิว</span>
+          <span class="f">เดินได้ 24 ชม.</span>
+          <span class="f baht">ฟรี</span>
+          <span class="f">อยู่หน้าที่พัก</span>
+        </div>
+        <p class="tagline" style="margin-top:8px"><span class="shut">กาดกองต้าเปิดเฉพาะ ส.–อา. คืนนี้ปิด</span> — แต่ตึกเก่าพม่า–จีนตลอดถนนยังเดินดูได้</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km"><b>คืน</b>2</div>
+      <span class="time">พักคืนที่ 2</span>
+      <div class="card bed">
+        <h3>The Riverside Guest House</h3>
+        <p class="tagline">บ้านไม้เก่าริมน้ำวัง บนถนนตลาดเก่า — ตื่นมาแล้วเดินหาของกินได้ทั้งเช้า และอยู่ติดสะพานรัษฎาพอดี</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.5</b> · 334 รีวิว</span>
+          <span class="f">อยู่บนกาดกองต้า</span>
+          <span class="f">มีคาเฟ่ + บาร์ในตัว</span>
+        </div>
+        <p class="why">เดิน 5 นาทีถึง: ยามเช้า at Lampang · Wooden House Cafe · Bakingdays · ROØT Café · สะพานรัษฎา</p>
+        <div class="backup">
+          <strong>ถ้าอยากได้ห้องแบบโรงแรม</strong>
+          <ul>
+            <li><em>NonNee Lampang</em> ★4.5 (319) · กลางเมือง ที่จอดรถในอาคาร · 1.5 กม. จากตลาดเก่า</li>
+            <li><em>The Coconut Hotel</em> ★4.6 (1,492) · ห้องใหม่ อาหารเช้าดี · เหมาะถ้ามาถึงดึก</li>
+            <li><em>Guest House Baan Kieng</em> ★4.6 (60) · อยู่บนถนนคนเดินเป๊ะ ห้องมีระเบียง</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= DAY 3 ================= -->
+<section class="day" id="d3">
+  <div class="day-head"><span class="day-num">วัน 3</span><h2>อังคาร 24 พ.ย. · ลำปางหลวง → ศรีสัชนาลัย → สุโขทัย</h2></div>
+  <div class="day-meta"><span>ขับ ~270 กม.</span><span>~4 ชม. บนถนน</span><span>จบที่งานลอยกระทง</span></div>
+
+  <div class="rail">
+
+    <div class="stop">
+      <div class="km"><b>มื้อ</b>เช้า</div>
+      <span class="time">06:45 – 07:35</span>
+      <div class="card">
+        <h3>ยามเช้า at Lampang</h3>
+        <p class="tagline">อาคารเก่าริมถนนวังขวา เปิดตั้งแต่ตีห้าครึ่ง เหมาะกับวันที่ต้องออกเดินทางเช้า</p>
+        <p class="dish"><span>สั่ง:</span> ไข่กระทะ · ขนมปังเวียดนาม · กาแฟเวียดนาม (บอกก่อนถ้าไม่เอาหวาน) · ปอเปี๊ยะสด</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 172 รีวิว</span>
+          <span class="f baht">~<b>60–120฿</b></span>
+          <span class="f">เปิด <b>05:30–14:00 ทุกวัน</b></span>
+          <span class="f">300 ม. จากที่พัก</span>
+        </div>
+        <span class="flag early">ของหมดเร็ว ไปก่อน 8 โมง</span>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>ร้านโจ๊กอัศวิน (ฟ้าลานนา)</em> ★4.2 (40) · 06:00–17:00 ทุกวัน · โจ๊ก เกาเหลาเลือดหมู ซาลาเปา 20–40฿</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 20 กม. · 30 นาที · ออกทางใต้ไปอำเภอเกาะคา</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>9</div>
+      <span class="time see">08:10 – 09:20 <span class="dur">· ใช้เวลา 70 นาที</span></span>
+      <div class="card sight">
+        <h3>วัดพระธาตุลำปางหลวง</h3>
+        <p class="tagline">วัดไม้ล้านนาที่สมบูรณ์ที่สุดในประเทศ ต้องมาเช้าเพราะ “เงาพระธาตุกลับหัว” ต้องอาศัยแดดเช้าส่องผ่านรูเล็ก ๆ เข้ามาในวิหาร</p>
+        <p class="dish"><span>ต้องดู:</span> เงาพระธาตุกลับหัว — ปกติดูในพระอุโบสถ ถ้าปิดบูรณะให้เข้าวิหารด้านซ้าย มองบนโต๊ะฝั่งขวา · จิตรกรรมล้านนาโบราณในวิหารเปิดโล่งทางเข้า · ต้นโพธิ์สมัยพระเจ้าติโลกราช · เดินประทักษิณรอบพระธาตุ ชุดดอกไม้ธูปเทียนบริจาค 20฿ · รถม้าจอดรออยู่หน้าวัด</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 14,713 รีวิว</span>
+          <span class="f">เปิด <b>07:30–17:00 ทุกวัน</b></span>
+          <span class="f baht">ไม่มีค่าเข้า</span>
+          <span class="f">20 กม. จากตัวเมือง</span>
+        </div>
+        <span class="flag early">ผู้หญิงห้ามขึ้นบริเวณพระธาตุชั้นใน · แต่งกายสุภาพ</span>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km"><b>มื้อ</b>สาย</div>
+      <span class="time">09:30 – 10:15</span>
+      <div class="card">
+        <h3>ข้าวซอยลำปางหลวง</h3>
+        <p class="tagline">อยู่ก่อนถึงประตูวัดนิดเดียว จอดรถสะดวก — ข้าวซอยลำปางน้ำข้นกว่าเชียงใหม่ ต้องลองเทียบกับที่กินมาเมื่อวาน</p>
+        <p class="dish"><span>สั่ง:</span> ข้าวซอยไก่ · มีสูตรเจ/วีแกน · เติมผักดองกับหอมแดงเยอะ ๆ</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.6</b> · 32 รีวิว</span>
+          <span class="f baht">~<b>50–70฿</b></span>
+          <span class="f">เปิด <b>09:00–17:00 ทุกวัน</b></span>
+          <span class="f">500 ม. จากวัด</span>
+        </div>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>ข้าวซอยป้าบุญ</em> ★4.5 (793) · 09:00–14:00 ทุกวัน · <b>ชามละ 40฿</b> ตำนานลำปาง แต่ต้องย้อนกลับเข้าเมือง 15 กม. และหมดก่อนเที่ยง</li>
+            <li><em>ข้าวซอยซุปเปอร์</em> ★4.2 (444) · 09:00–15:00 · มีข้าวซอยเนื้อและหมูสะเต๊ะ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km plain"><b>ของ</b>ฝาก</div>
+      <span class="time">10:20 – 10:40</span>
+      <div class="card stopover">
+        <h3>ข้าวแต๋นน้ำแตงโมอนุชา · เกาะคา</h3>
+        <p class="tagline">★4.7 (30) · 08:00–20:00 ทุกวัน · ทอดสดหน้าร้าน มีแบบดิบให้เอากลับไปทอดเอง · อยู่บนเส้นทางออกจากวัดพอดี ไม่ต้องอ้อม<br><em>สำรอง:</em> ข้าวแต๋นคุณมณี ★4.4 (116) · 08:00–18:00 · ในเมืองลำปาง</p>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 175 กม. · 2 ชม. 30 · สาย 11 → เด่นชัย → สาย 101 ลงศรีสัชนาลัย</div>
+
+    <div class="stop">
+      <div class="km"><b>มื้อ</b>เที่ยง</div>
+      <span class="time">13:15 – 14:15</span>
+      <div class="card">
+        <h3>บ้านกลางนาศรีสัชนาลัย</h3>
+        <p class="tagline">ร้านกลางทุ่งนา เมนูยาวมาก เด่นปลาน้ำจืด — จุดพักที่ดีที่สุดก่อนเข้าอุทยานฯ</p>
+        <p class="dish"><span>สั่ง:</span> ปลาแม่น้ำทอดสมุนไพร · ผักบุ้งทอดกรอบ · แกงส้ม · ต้มยำ</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.3</b> · 326 รีวิว</span>
+          <span class="f baht">~<b>400–700฿</b>/โต๊ะ</span>
+          <span class="f">เปิด <b>11:00–22:00 ทุกวัน</b></span>
+          <span class="f">3 กม. จากอุทยานฯ</span>
+        </div>
+        <span class="flag book">วันลอยกระทงคนเยอะ โทรจอง · 081-441-6185</span>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>ป้าซ่ง (Pa Song)</em> ★4.4 (246) · 10:00–22:00 <span class="shut">ปิดอาทิตย์</span> (อังคารเปิด) · ปลามันอบมะนาว · เหนือขึ้นไป 10 กม.</li>
+            <li><em>หมาล่าทั่ง สาขาสวรรคโลก</em> ★4.9 (54) · 11:00–20:30 ทุกวัน · หม้อไฟราคาถูก อยู่ระหว่างทางเข้าสุโขทัย</li>
+            <li><span class="shut">ศาลาลม ปิดวันอังคาร</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 3 กม. · 5 นาที</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>10</div>
+      <span class="time see">14:25 – 15:00 <span class="dur">· ใช้เวลา 35 นาที</span></span>
+      <div class="card sight">
+        <h3>วัดพระศรีรัตนมหาธาตุเชลียง</h3>
+        <p class="tagline">อยู่นอกกำแพงอุทยานฯ คนมักขับผ่านโดยไม่รู้ — แต่หลายคนบอกว่าประทับใจกว่าตัวอุทยานฯ เพราะเป็นวัดที่ยังใช้งานจริงซ้อนอยู่บนโบราณสถานขอม</p>
+        <p class="dish"><span>ต้องดู:</span> ปรางค์ประธานศิลปะขอม ปีนบันไดชันขึ้นไปด้านในได้ · พระพุทธรูปปางลีลาศิลปะสุโขทัยแท้ · ริมแม่น้ำยม</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.8</b> · 551 รีวิว</span>
+          <span class="f">เปิดทุกวัน</span>
+          <span class="f baht">คนไทย ~<b>20฿</b></span>
+          <span class="f">2 กม. จากอุทยานฯ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 2 กม. · 5 นาที</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>11</div>
+      <span class="time see">15:10 – 16:30 <span class="dur">· ใช้เวลา 1 ชม. 20</span></span>
+      <div class="card sight">
+        <h3>อุทยานประวัติศาสตร์ศรีสัชนาลัย</h3>
+        <p class="tagline">เมืองลูกหลวงของสุโขทัย คนน้อยกว่าสุโขทัยมากและป่ายังรกกว่า ทำให้บรรยากาศเหมือนค้นพบเอง — บ่ายแก่ ๆ แดดเริ่มเฉียง เงาเจดีย์ยาวสวย</p>
+        <p class="dish"><span>ต้องดู:</span> วัดช้างล้อม ช้างปูนปั้น 39 เชือกรอบฐานเจดีย์ · วัดเจดีย์เจ็ดแถว เจดีย์หลากรูปทรงเรียงกัน · วัดนางพญา ลายปูนปั้นผนังละเอียดที่สุดในสุโขทัย</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 3,537 รีวิว</span>
+          <span class="f">เปิด <b>08:30–17:00 ทุกวัน</b></span>
+          <span class="f baht">คนไทย <b>20฿</b> · ต่างชาติ 200฿</span>
+          <span class="f baht">รถราง <b>30฿</b>/คน</span>
+        </div>
+        <span class="flag early">พื้นที่กว้างและแดดแรง — รถรางคุ้มกว่าเช่าจักรยาน</span>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 65 กม. · 1 ชม. 10 · ลงสาย 101 ผ่านสวรรคโลก เข้าเมืองเก่าสุโขทัย</div>
+
+    <div class="stop">
+      <div class="km plain"><b>เช็ค</b>อิน</div>
+      <span class="time">17:45 – 18:10</span>
+      <div class="card stopover">
+        <h3>เก็บรถไว้ที่พัก แล้วเดินหรือปั่นเข้างาน</h3>
+        <p class="tagline">คืนลอยกระทงรถเข้าเมืองเก่าติดหนักและที่จอดเต็มตั้งแต่หัวค่ำ — ข้อได้เปรียบทั้งหมดของการนอนในเมืองเก่าอยู่ตรงนี้</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km"><b>มื้อ</b>เย็น</div>
+      <span class="time">18:15 – 19:15</span>
+      <div class="card">
+        <h3>Promchan Cafe · เมืองเก่า</h3>
+        <p class="tagline">เลือกร้านในเมืองเก่าโดยเฉพาะเพื่อไม่ต้องขับออกไปเมืองใหม่ในคืนงาน · เปิดถึงสองทุ่ม กินเสร็จเดินเข้างานได้เลย</p>
+        <p class="dish"><span>สั่ง:</span> อาหารจานเดียว + กาแฟ/ขนม · มีทั้งโซนแอร์และสวน</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.8</b> · 117 รีวิว</span>
+          <span class="f baht">~<b>100–210฿</b>/คน</span>
+          <span class="f">เปิด <b>09:00–20:00 ทุกวัน</b></span>
+          <span class="f">1 กม. จากอุทยานฯ</span>
+        </div>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>ซุ้มอาหารในงานลอยกระทง</em> · ในอุทยานฯ มีตลาดย้อนยุคและอาหารพื้นเมืองเยอะเฉพาะช่วงงาน — อยากได้บรรยากาศให้ข้ามมื้อร้านไปกินในงานเลย</li>
+            <li><em>บ้านชมน้ำ คาเฟ่</em> ★4.7 (89) · 08:30–20:30 ทุกวัน · ริมแม่น้ำยม กล้วยทอดไอศกรีม 99฿ · อยู่เมืองใหม่</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km see"><b>ไฮ</b>ไลต์</div>
+      <span class="time see">19:30 – 22:30</span>
+      <div class="card sight">
+        <h3>ลอยกระทง เผาเทียนเล่นไฟ · อุทยานฯ สุโขทัย</h3>
+        <p class="tagline">ไฮไลต์ทั้งทริป — ลอยกระทงกลางโบราณสถาน ตะเกียงและเทียนหลายพันดวงรอบสระน้ำโบราณ กับเงาเจดีย์วัดมหาธาตุสะท้อนน้ำ</p>
+        <p class="dish"><span>ต้องดู:</span> วัดมหาธาตุตอนจุดเทียนรอบสระ · ขบวนแห่กระทงและตลาดย้อนยุค · พลุปิดงาน</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 18,354 รีวิว (อุทยานฯ)</span>
+          <span class="f">คืนขึ้น 15 ค่ำ เดือน 12</span>
+          <span class="f">เดินจากที่พัก</span>
+        </div>
+        <span class="flag early">ไปแต่หัวค่ำ · เตรียมเงินสด · ใส่รองเท้าเดินสบาย</span>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km"><b>คืน</b>3</div>
+      <span class="time">พักคืนที่ 3</span>
+      <div class="card bed">
+        <h3>Thai Thai Sukhothai Resort</h3>
+        <p class="tagline">บ้านไม้สักตกแต่งแบบล้านนา–สุโขทัย อยู่ในเมืองเก่า เดินถึงประตูอุทยานฯ และคาเฟ่ดี ๆ ทั้งหมด</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 1,668 รีวิว</span>
+          <span class="f">เช่าจักรยาน <b>50฿</b></span>
+          <span class="f">มีสระ · อาหารเช้าดี</span>
+        </div>
+        <p class="why">เดินถึง: ประตูอุทยานฯ · Komzhun slowbar · Sweet dream cafe · Promchan Cafe</p>
+        <span class="flag book">จองเป็นอย่างแรก · 084-932-1006</span>
+        <div class="backup">
+          <strong>สำรอง (เรียงตามความใกล้อุทยานฯ)</strong>
+          <ul>
+            <li><em>BaanB&amp;B Sukhothai</em> ★4.9 (207) · อยู่ติดกันเลย เจ้าของทำอาหารเอง</li>
+            <li><em>Vieng Tawan Sukhothai</em> ★4.6 (144) · ซอยเดียวกัน ใช้สระร่วม ถูกกว่า</li>
+            <li><em>Scent of Sukhothai Resort</em> ★4.6 (496) · ห้องใหญ่ เงียบ มีสระ</li>
+            <li><em>Sriwilai Sukhothai</em> ★4.5 (868) · ตัวเลือกหรู มีเจดีย์โบราณในรีสอร์ต</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= DAY 4 ================= -->
+<section class="day" id="d4">
+  <div class="day-head"><span class="day-num">วัน 4</span><h2>พุธ 25 พ.ย. · สุโขทัย → กำแพงเพชร → นครสวรรค์ → กรุงเทพฯ</h2></div>
+  <div class="day-meta"><span>ขับ ~465 กม.</span><span>~6 ชม. 30 บนถนน</span><span>ถึงบ้าน ~20:00</span></div>
+
+  <div class="rail">
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>12</div>
+      <span class="time see">06:30 – 08:00 <span class="dur">· ปั่นจักรยาน 1 ชม. 30</span></span>
+      <div class="card sight">
+        <h3>อุทยานประวัติศาสตร์สุโขทัย · เขตกำแพงเมือง</h3>
+        <p class="tagline">เปิด 06:30 — เช้าหลังลอยกระทงคนหายหมด แดดยังนุ่ม และเจดีย์ยังมีร่องรอยเทียนจากเมื่อคืน เป็นช่วงที่สวยที่สุดของทั้งปี</p>
+        <p class="dish"><span>เส้นทางปั่น:</span> วัดมหาธาตุ (เจดีย์ทรงพุ่มข้าวบิณฑ์กลางสระ) → วัดศรีสวาย ปรางค์ 3 องค์ → วัดสระศรี บนเกาะกลางน้ำ → วัดตระพังเงิน</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 18,354 รีวิว</span>
+          <span class="f">เปิด <b>06:30–19:30 ทุกวัน</b></span>
+          <span class="f baht">คนไทย ~<b>20฿</b> + จักรยาน 30฿</span>
+          <span class="f">เดินจากที่พัก</span>
+        </div>
+        <span class="flag early">เช่าจักรยานที่รีสอร์ต 50฿ ประหยัดเวลาเดินไปหาร้านเช่า</span>
+      </div>
+    </div>
+
+    <div class="drive">ขับ/ปั่น 2 กม. · 8 นาที · ขึ้นเหนือออกนอกกำแพงเมือง</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>13</div>
+      <span class="time see">08:10 – 08:40 <span class="dur">· ใช้เวลา 30 นาที</span></span>
+      <div class="card sight">
+        <h3>วัดศรีชุม · พระอจนะ</h3>
+        <p class="tagline">อย่าข้าม — เป็นภาพจำของสุโขทัยที่แรงที่สุด เดินผ่านช่องแคบมืดในผนังมณฑปแล้วโผล่มาเจอพระพักตร์พระอจนะขนาดมหึมาอยู่ตรงหน้า</p>
+        <p class="dish"><span>ต้องดู:</span> พระหัตถ์ที่ปิดทองคำเปลวจนเหลืองทั้งองค์ · ช่องอุโมงค์ในผนังมณฑป · แสงเช้าส่องเข้าช่องด้านบนพอดี</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.8</b> · 5,083 รีวิว</span>
+          <span class="f">เปิด <b>07:30–17:00 ทุกวัน</b></span>
+          <span class="f baht">เขตเหนือ แยกตั๋ว คนไทย ~<b>20฿</b></span>
+          <span class="f">2 กม. จากเขตกลาง</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km"><b>กา</b>แฟ</div>
+      <span class="time">08:50 – 09:20</span>
+      <div class="card">
+        <h3>Komzhun slowbar coffee</h3>
+        <p class="tagline">สโลว์บาร์เมล็ดไทย เสิร์ฟในถ้วยเซรามิกช่างท้องถิ่น กาแฟดีที่สุดในสุโขทัย</p>
+        <p class="dish"><span>สั่ง:</span> พิคโคโล่ หรือ ดริปเมล็ดเดี่ยว · ถามบาริสต้าว่าเมล็ดวันนี้ตัวไหน</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.9</b> · 146 รีวิว</span>
+          <span class="f baht">~<b>70–120฿</b></span>
+          <span class="f">เปิด <b>07:30–16:30 ทุกวัน</b></span>
+        </div>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>Sweet dream cafe</em> ★4.7 (127) · 09:00–18:00 ทุกวัน · ติดอุทยานฯ น้ำแข็งไสเมล่อน กาแฟมะพร้าว</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 12 กม. · 15 นาที · ออกจากเมืองเก่าไปเมืองใหม่ (เก็บของขึ้นรถก่อน)</div>
+
+    <div class="stop">
+      <div class="km"><b>มื้อ</b>เช้า</div>
+      <span class="time">09:40 – 10:20</span>
+      <div class="card">
+        <h3>ก๋วยเตี๋ยวสุโขทัย ป้าเพ็ญ</h3>
+        <p class="tagline">มื้อสุดท้ายในสุโขทัยต้องเป็นก๋วยเตี๋ยวสุโขทัยแท้ — ร้านนี้เด่นซี่โครงหมูตุ๋นเปื่อย ไม่หวานจัดเท่าเจ้าอื่น</p>
+        <p class="dish"><span>สั่ง:</span> ก๋วยเตี๋ยวสุโขทัยแห้ง ซี่โครงหมู · เพิ่มถั่วฝักยาวกับถั่วลิสงคั่ว</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.4</b> · 269 รีวิว</span>
+          <span class="f baht">~<b>50–70฿</b></span>
+          <span class="f">เปิด <b>09:00–16:00 ทุกวัน</b></span>
+          <span class="f">ร้านเปิดโล่ง ไม่มีแอร์</span>
+        </div>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>ตาปุ๋ย</em> ★4.2 (1,574) · 07:30–16:30 ทุกวัน · เจ้าเก่าแก่ มีห้องแอร์ ที่จอดรถสะดวก</li>
+            <li><em>Ban Kru Eiw</em> ★4.2 (380) · 09:00–15:30 ทุกวัน · ผัดไทยกับข้าวคลุกกะปิดีมาก</li>
+            <li><span class="shut">บ้านรักษ์ไม้ ปิดวันพุธ</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km plain"><b>ขนม</b>ติดรถ</div>
+      <span class="time">10:25 – 10:40</span>
+      <div class="card stopover">
+        <h3>ขนมวง แม่ประไพ (Thai Donut)</h3>
+        <p class="tagline">★4.8 (48) · 08:30–14:00 <span class="shut">ปิดอาทิตย์</span> · <b>ถาดละ 20฿ ได้ 8 ชิ้น</b> · ขนมวงทอดร้อนเคลือบน้ำตาลกรอบ กลิ่นงา หากินยากนอกจังหวัด กินในรถได้เลย</p>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 80 กม. · 1 ชม. 15 · สาย 101 → 1 ลงกำแพงเพชร</div>
+
+    <div class="stop">
+      <div class="km see"><b>เที่ยว</b>14</div>
+      <span class="time see">12:00 – 13:00 <span class="dur">· ใช้เวลา 1 ชม.</span></span>
+      <div class="card sight">
+        <h3>อุทยานประวัติศาสตร์กำแพงเพชร</h3>
+        <p class="tagline">มรดกโลกแห่งที่ 3 ของกลุ่มสุโขทัยที่คนขับผ่านโดยไม่แวะ — เงียบมาก บางวันแทบไม่มีนักท่องเที่ยวเลย ศิลาแลงสีส้มตัดกับต้นไม้ใหญ่ให้อารมณ์คนละแบบกับสุโขทัย</p>
+        <p class="dish"><span>ต้องดู (เลือกโซนในกำแพงเมืองพอ):</span> วัดพระแก้ว พระพุทธรูปศิลาแลงเรียงแถว · วัดพระธาตุ · ถ้ามีเวลาอีก 30 นาทีค่อยข้ามไปโซนอรัญญิกดูวัดช้างรอบ</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 1,787 รีวิว</span>
+          <span class="f">เปิด <b>08:30–16:30 ทุกวัน</b></span>
+          <span class="f baht">คนไทย ~<b>20–30฿</b> · ต่างชาติ 200฿</span>
+          <span class="f">3 กม. จากถนนใหญ่</span>
+        </div>
+        <span class="flag opt">ตัดออกได้ถ้าอยากถึงบ้านเร็วขึ้น 1 ชั่วโมง</span>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 4 กม. · 10 นาที</div>
+
+    <div class="stop">
+      <div class="km plain"><b>ของ</b>ฝาก</div>
+      <span class="time">13:10 – 13:30</span>
+      <div class="card stopover">
+        <h3>ตลาดมอกล้วยไข่ · กำแพงเพชร</h3>
+        <p class="tagline">ริมพหลโยธินขาลงพอดี ไม่ต้องอ้อม ทุกร้านให้ชิมก่อนซื้อ · <b>ร้านสหธรรม</b> ★4.6 (131) 08:00–17:00 ทุกวัน<br><span>ซื้อ: กล้วยไข่อบเนย · กล้วยฉาบ · กล้วยไส้มะขาม · มะม่วงกวน</span><br><em>สำรอง:</em> ร้านลูกเจี๊ยบ ★4.4 (109) · 10:00–20:00 ทุกวัน</p>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 120 กม. · 1 ชม. 30 · พหลโยธินลงนครสวรรค์</div>
+
+    <div class="stop">
+      <div class="km"><b>มื้อ</b>เที่ยง</div>
+      <span class="time">15:00 – 16:10</span>
+      <div class="card">
+        <h3>ลาบบ้านกิ๊ก กำกิ๊นเมือง · นครสวรรค์</h3>
+        <p class="tagline">ปิดทริปด้วยอาหารเหนืออีกรอบแต่คนละสำนวนกับที่กินมา — บ้านไม้ในสวนใกล้เจ้าพระยา</p>
+        <p class="dish"><span>สั่ง:</span> ไส้อั่ว · แกงโฮะ · แกงฮังเล · ยำปลาย่างใส่วุ้นเส้น · ข้าวซอยไก่</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.9</b> · 647 รีวิว</span>
+          <span class="f baht">~<b>150–250฿</b>/คน</span>
+          <span class="f">เปิด <b>10:00–22:00 ทุกวัน</b></span>
+          <span class="f">2 กม. จากทางเลี่ยงเมือง</span>
+        </div>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>Khamnueang (One bite)</em> ★4.9 (1,096) · 10:30–22:30 ทุกวัน · ไทยฟิวชั่นจานสวย ที่จอดรถสบาย</li>
+            <li><em>Si Khwae 2</em> ★4.9 (245) · 10:00–21:00 ทุกวัน · สาขาโครกพระ อยู่ทางลงกรุงเทพฯ พอดี</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="km"><b>กา</b>แฟ</div>
+      <span class="time">16:15 – 16:45</span>
+      <div class="card">
+        <h3>GOOD OLD DAYS CAFE &amp; BISTRO</h3>
+        <p class="tagline">กาแฟแก้วสุดท้ายก่อนลุยรวดเดียว 240 กม. เข้ากรุงเทพฯ — ตัดออกได้ถ้าอยากถึงบ้านก่อนหนึ่งทุ่ม</p>
+        <div class="facts">
+          <span class="f star">★ <b>4.7</b> · 238 รีวิว</span>
+          <span class="f baht">~<b>80–150฿</b></span>
+          <span class="f">เปิด <b>09:00–23:00</b></span>
+        </div>
+        <div class="backup">
+          <strong>สำรอง</strong>
+          <ul>
+            <li><em>HAPPEN</em> ★4.6 (149) · 07:40–18:00 ทุกวัน · ตึกเก่า 3 ชั้น ครัวซองต์และครีมพัฟดี</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive">ขับ 240 กม. · 3 ชม. · สาย 32 เอเชีย ลงกรุงเทพฯ</div>
+
+    <div class="stop">
+      <div class="km"><b>965</b>กม.</div>
+      <span class="time">~20:00</span>
+      <div class="card stopover">
+        <h3>ถึงกรุงเทพฯ</h3>
+        <p class="tagline">14 จุดเที่ยว · 16 มื้อ/คาเฟ่ · 3 จังหวัดที่ไม่เคยแวะตอนขาไป — และได้นอนเต็มคืนก่อนเข้างานวันพฤหัสฯ</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section class="panel" id="book">
+  <h2>รายการที่ต้องจอง · เรียงตามความด่วน</h2>
+  <div class="body">
+    <div class="row"><div class="when">ด่วนสุด</div><div class="what"><b>Thai Thai Sukhothai Resort</b> — คืน 24 พ.ย.
+      <span>คืนลอยกระทง ห้องในเมืองเก่าเต็มล่วงหน้าหลายเดือน · 084-932-1006</span></div></div>
+    <div class="row"><div class="when">สัปดาห์นี้</div><div class="what"><b>Le Patta Hotel</b> — คืน 22 พ.ย.
+      <span>คืนวันอาทิตย์ที่มีงานแต่งในเมือง ห้องหายเร็ว</span></div></div>
+    <div class="row"><div class="when">สัปดาห์นี้</div><div class="what"><b>The Riverside Guest House</b> — คืน 23 พ.ย.
+      <span>ห้องน้อยและห้องวิวแม่น้ำมีจำกัด · 054-227-005</span></div></div>
+    <div class="row"><div class="when">ล่วงหน้า 1 วัน</div><div class="what"><b>แกงหอม Kenghom</b> — เย็น 23 พ.ย.
+      <span>โต๊ะโซนสวนกับดนตรีสดเต็มเร็ว · 081-638-8203</span></div></div>
+    <div class="row"><div class="when">ล่วงหน้า 1 วัน</div><div class="what"><b>บ้านกลางนาศรีสัชนาลัย</b> — เที่ยง 24 พ.ย.
+      <span>วันลอยกระทงคนแวะเยอะ · 081-441-6185</span></div></div>
+    <div class="row"><div class="when">โทรเช็ก</div><div class="what"><b>Homchan</b> — เย็น 22 พ.ย.
+      <span>ไม่รับจองเสมอไป แต่โทรถามคิวก่อนได้ · 097-162-4532</span></div></div>
+  </div>
+</section>
+
+<!-- ================= CLOSED ================= -->
+<section class="panel" id="closed">
+  <h2>ปฏิทินร้านปิด · เช็กก่อนเลี้ยว</h2>
+  <div class="body">
+    <div class="row"><div class="when">จันทร์ 23</div><div class="what"><b>น้ำเงี้ยวป้าสุข · ร้านกิ่งกะไข่ · Ma Long Der · ROØT Café · Bakingdays · A Ga Li Go อิงกว๊าน</b>
+      <span>นี่คือเหตุผลที่มื้อเที่ยงวันนี้ใช้ AROI DEE แทนเจ้าน้ำเงี้ยวดัง</span></div></div>
+    <div class="row"><div class="when">อังคาร 24</div><div class="what"><b>ลาบลุงน้อย · ศาลาลม · Bakingdays · ข้าวต้มเครื่อง By อร่อยบาทเดียว</b>
+      <span>ไม่กระทบแผน เพราะวันนี้อยู่บนถนนเกือบทั้งวันและจบที่งานลอยกระทง</span></div></div>
+    <div class="row"><div class="when">พุธ 25</div><div class="what"><b>บ้านรักษ์ไม้ · I'm waiting for you</b>
+      <span>ก๋วยเตี๋ยวสุโขทัยจึงไปที่ป้าเพ็ญแทน</span></div></div>
+    <div class="row"><div class="when">เฉพาะ ส.–อา.</div><div class="what"><b>กาดกองต้า ลำปาง · ตลาดนัดกลางคืนสุโขทัย</b>
+      <span>ทริปนี้ไม่ตรงวัน — ถ้าเลื่อนงานแต่งเป็น อา. 29 พ.ย. จะได้กาดกองต้าแทน แต่เสียคืนลอยกระทง</span></div></div>
+  </div>
+</section>
+
+<footer>
+  <p><b>หมายเหตุเรื่องข้อมูล</b> — คะแนนและจำนวนรีวิวมาจาก Google Maps ณ ส.ค. 2569 · ราคาอาหารเป็นช่วงประมาณจากรีวิว ไม่ใช่ราคาทางการ · ค่าเข้าโบราณสถานปรับขึ้นเป็นระยะ ควรเผื่อไว้ · ระยะทางและเวลาขับเป็นค่าประมาณของเส้นทางหลัก (สาย 1 พหลโยธิน → 11 → 101 → 1 → 32) ยังไม่รวมรถติดช่วงเทศกาล · วัน-เวลาเปิดเปลี่ยนได้ตลอด ควรโทรเช็กร้านหลักในวันเดินทาง</p>
+  <p style="margin-top:14px">แผนนี้อิงสมมติฐานว่างานแต่งคือ <b>อาทิตย์ที่ 22 พ.ย. 2569</b> และขับรถส่วนตัวตลอดเส้นทาง</p>
+</footer>
+
+</div>
+</body>
+</html>
