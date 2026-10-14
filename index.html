@@ -181,6 +181,21 @@ html.js .reveal.in{opacity:1;transform:none;transition:opacity 420ms var(--ease-
 .hstat i{color:var(--ev)}
 .hstat b{color:var(--ink);font-weight:600}
 .thl-h{margin-top:14px;font-size:var(--fs-xs);font-weight:600;color:var(--must-a);display:flex;align-items:center;gap:6px}
+/* Loy Krathong entry button (hero) + "มีเพลง" badge on the d4 route card */
+.loy-cta{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;margin-top:14px;padding:8px 16px 8px 12px;border-radius:var(--r-lg);
+  font:inherit;text-align:left;color:#ffe9c2;cursor:pointer;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#4a280c,#2a1609 60%,#1c120b);border:1px solid rgba(251,191,36,.55);
+  box-shadow:inset 0 1px 0 rgba(255,236,190,.2),0 0 24px -8px rgba(251,170,60,.7)}
+.loy-cta .lc-ic{flex:none;font-size:26px;line-height:1;transform-origin:50% 0;animation:lcSway 3.2s ease-in-out infinite}
+.loy-cta .lc-tx{flex:1;min-width:0;display:flex;flex-direction:column}
+.loy-cta .lc-tx b{font-size:var(--fs-base);font-weight:700;color:#fde68a}
+.loy-cta .lc-tx small{font-size:var(--fs-xs);color:#f5d9a8}
+.loy-cta .lc-note{flex:none;color:#fde68a;font-size:16px}
+@keyframes lcSway{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-2px)}}
+.rs-music{display:inline-flex;align-items:center;gap:4px;margin-left:6px;padding:1px 7px;border-radius:var(--r-pill);font-size:11px;font-weight:600;
+  color:#1a1204;background:linear-gradient(135deg,#fde68a,#f59e0b)}
+.rs-music i{font-size:9px}
+@media (prefers-reduced-motion:reduce){.loy-cta .lc-ic{animation:none}}
 .thl-row{display:flex;gap:8px;overflow-x:auto;margin:8px -16px 0;padding:0 16px 2px;scroll-snap-type:x proximity}
 .thl{flex:none;scroll-snap-align:start;display:flex;align-items:center;gap:10px;min-height:52px;max-width:220px;padding:8px 12px 8px 8px;border-radius:var(--r-md);
   background:linear-gradient(135deg,rgba(253,230,138,.12),rgba(245,158,11,.08));border:1px solid rgba(253,230,138,.28)}
@@ -2839,6 +2854,7 @@ function renderHero(force) {
     h += '<div class="batt" aria-hidden="true"><span class="batt-body"><span class="batt-fill" id="heroBatt" style="--k:1"></span></span><span class="batt-cap"></span></div>';
     h += '<div class="batt-t">' + tw(abbrDate(first.dateLabel) + ' ' + first.time.split(' - ')[0] + ' ออกจาก กทม. (แบต 100%)') + '</div>';
     h += heroStats();
+    h += loyCta();
     if (THL.length) {
       h += '<div class="thl-h">' + ic('fa-solid fa-star') + tw(THL.length + ' ไฮไลต์ของทริป') + '</div><div class="thl-row no-sb">' +
         THL.map(t => {
@@ -2862,6 +2878,7 @@ function renderHero(force) {
       h += '<a class="btn-hero press" id="heroNav" href="' + esc(target.mapUrl) + '"' + ext + ' data-ripple>' + ic('fa-solid fa-diamond-turn-right') +
         '<span>' + (st.next ? 'นำทางไปจุดถัดไป' : 'นำทางไปจุดนี้') + '</span></a>';
     }
+    if (st.dayKey !== 'd4' && st.dayKey !== 'd5') h += loyCta();
   } else {
     h += '<div class="hero-eyebrow">' + ic('fa-solid fa-flag-checkered', ' style="color:var(--ev)"') + '<span>' + esc(appName) + '</span></div>';
     h += '<div class="hero-big">ทริปจบแล้ว · <span class="num">' + fmtN(TOTAL_KM) + '</span> กม.</div>';
@@ -2881,6 +2898,13 @@ function renderHero(force) {
       requestAnimationFrame(() => { b.style.setProperty('--k', '1'); b.classList.add('charging'); });
     }
   }
+}
+// ปุ่มเข้าโหมดลอยกระทงที่หาง่าย (ผู้ใช้บอกว่าหาหน้าที่มีเพลงไม่เจอ) · ใช้ action เดียวกับการแตะการ์ดวันที่ 24
+function loyCta() {
+  return '<button type="button" class="loy-cta press" data-action="day" data-day="d4" data-ripple aria-label="เปิดโหมดลอยกระทง วันที่ 24 พฤศจิกายน พร้อมเพลง">' +
+    '<span class="lc-ic" aria-hidden="true">🏮</span>' +
+    '<span class="lc-tx"><b>โหมดลอยกระทง</b><small>' + tw('อ. 24 พ.ย. โคมลอย + เพลง') + '</small></span>' +
+    ic('fa-solid fa-music lc-note') + '</button>';
 }
 function heroStats() {
   return '<div class="hstats">' +
@@ -2902,7 +2926,8 @@ function renderRouteStrip() {
   h += DAYS.map(d => {
     const m = d.hl && d.hl.main;
     return '<button type="button" class="rs-card press" data-action="day" data-day="' + esc(d.key) + '" aria-pressed="' + (S.day === d.key) + '" aria-label="' + esc(d.pill) + '">' +
-      '<span class="rs-day"><span>' + tw(pillShort(d)) + '</span>' + (todayKey === d.key ? '<span class="today">วันนี้</span>' : '') + '</span>' +
+      '<span class="rs-day"><span>' + tw(pillShort(d)) + '</span>' + (todayKey === d.key ? '<span class="today">วันนี้</span>' : '') +
+        (d.key === 'd4' ? '<span class="rs-music">' + ic('fa-solid fa-music') + 'มีเพลง</span>' : '') + '</span>' +
       (m ? '<span class="rs-hl">' + ic('fa-solid ' + esc(m.icon || 'fa-star')) + '<span>' + esc(m.label) + '</span></span>' : '') +
       '<span class="rs-route">' + tw(d.route) + '</span>' +
       '<span class="rs-stats"><span><b class="rs-km" data-km="' + (+d.km || 0) + '">' + fmtN(d.km) + '</b> กม.</span><span>' + ic('fa-solid fa-bolt bolt') + '×' + chargesOn(d.key) + '</span></span>' +
