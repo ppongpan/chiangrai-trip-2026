@@ -1206,6 +1206,11 @@ html.loy .tl-day[data-day="d4"] .xc{background:rgba(16,14,24,.8)}
       { arr:'confirmedHotels', i:0, expect:{ name:'บ้านพักส่วนตัว อ.เวียงป่าเป้า', url:'https://maps.google.com/?cid=10485893456882023173' },
         set:{ url:'https://www.google.com/maps/search/?api=1&query=19.2614748497978,99.5106425453278',
               url2:'https://maps.google.com/?cid=10485893456882023173', urlLabel2:'ลาบไก่บ้านโฮ่ง (แวะระหว่างทาง)' } },
+      // ── งานแต่งงาน: เดิมยืม cid ของร้านชีวิตธรรมดา → สถานที่จัดงานจริงที่ผู้ใช้ให้มา (2026-10-14)
+      { arr:'itineraryItems', i:8, expect:{ id:9, title:'ร่วมงานแต่งงานที่ตัวเมืองเชียงราย', mapUrl:'https://maps.google.com/?cid=4467002379975881651' },
+        set:{ title:'ร่วมงานแต่งงาน ณ The Riverie by Katathani เชียงราย',
+              details:'เดินทางจากเวียงป่าเป้ามาถึงเมืองเชียงราย เพื่อร่วมแสดงความยินดีในงานแต่งงานช่วงเช้า-เที่ยง ที่โรงแรม The Riverie by Katathani ริมแม่น้ำกก',
+              mapUrl:'https://maps.app.goo.gl/4SshK26oPmEUgQ656' } },
       // ── ที่พักคืนที่ 2 ยังไม่ได้เลือกโรงแรม: ลิงก์ไนท์บาซาร์คงไว้ แต่บอกบนปุ่มว่าเป็นพิกัดย่าน
       { arr:'confirmedHotels', i:1, expect:{ url:'https://maps.google.com/?cid=2495050782346488007' },
         set:{ urlLabel:'พิกัดย่าน (ยังไม่ระบุโรงแรม)' } },
