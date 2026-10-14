@@ -1,0 +1,11 @@
+{
+  "name": "Chaingrai Roadtrip 2026",
+  "short_name": "Chaingrai 2026",
+  "description": "แผนเดินทาง XPeng G6 เชียงใหม่ เชียงราย พะเยา แพร่ สุโขทัย 20–25 พ.ย. 2026",
+  "lang": "th",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050a12",
+  "theme_color": "#050a12"
+}
