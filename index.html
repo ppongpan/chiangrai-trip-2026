@@ -7,11 +7,11 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Chaingrai 2026">
+<meta name="apple-mobile-web-app-title" content="ChiangRai 2026">
 <script>/* manifest only when served over http(s); file:// would log a CORS error */
 if(/^https?:$/.test(location.protocol)){var l=document.createElement("link");l.rel="manifest";l.href="manifest.webmanifest";document.head.appendChild(l);}</script>
 <meta name="color-scheme" content="dark">
-<title>Chaingrai Roadtrip 2026</title>
+<title>ChiangRai Roadtrip 2026</title>
 <script>document.documentElement.classList.add('js');
 /* look (theme + glow) is applied before first paint so a saved theme never flashes the default; storage may throw */
 (function(){try{var v=JSON.parse(localStorage.getItem('xpg6-look')||'null'),r=document.documentElement,c={aurora:'#0a0718',sunset:'#14080e'};if(v&&c[v.t]){r.setAttribute('data-theme',v.t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',c[v.t]);}if(v&&/^(off|max)$/.test(v.g))r.setAttribute('data-glow',v.g);}catch(e){}})();</script>
@@ -189,21 +189,6 @@ html.js .reveal.in{opacity:1;transform:none;transition:opacity 420ms var(--ease-
 .hstat{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:var(--r-pill);background:rgba(148,163,184,.08);border:1px solid var(--rim);font-size:var(--fs-xs);color:var(--ink-2)}
 .hstat i{color:var(--ev)}
 .hstat b{color:var(--ink);font-weight:600}
-/* Loy Krathong entry button (hero) + "มีเพลง" badge on the d4 route card */
-.loy-cta{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;margin-top:14px;padding:8px 16px 8px 12px;border-radius:var(--r-lg);
-  font:inherit;text-align:left;color:#ffe9c2;cursor:pointer;position:relative;overflow:hidden;
-  background:linear-gradient(135deg,#4a280c,#2a1609 60%,#1c120b);border:1px solid rgba(251,191,36,.55);
-  box-shadow:inset 0 1px 0 rgba(255,236,190,.2),0 0 24px -8px rgba(251,170,60,.7)}
-.loy-cta .lc-ic{flex:none;font-size:26px;line-height:1;transform-origin:50% 0;animation:lcSway 3.2s ease-in-out infinite}
-.loy-cta .lc-tx{flex:1;min-width:0;display:flex;flex-direction:column}
-.loy-cta .lc-tx b{font-size:var(--fs-base);font-weight:700;color:#fde68a}
-.loy-cta .lc-tx small{font-size:var(--fs-xs);color:#f5d9a8}
-.loy-cta .lc-note{flex:none;color:#fde68a;font-size:16px}
-@keyframes lcSway{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-2px)}}
-.rs-music{display:inline-flex;align-items:center;gap:4px;margin-left:6px;padding:1px 7px;border-radius:var(--r-pill);font-size:11px;font-weight:600;
-  color:#1a1204;background:linear-gradient(135deg,#fde68a,#f59e0b)}
-.rs-music i{font-size:9px}
-@media (prefers-reduced-motion:reduce){.loy-cta .lc-ic{animation:none}}
 .prog{height:8px;border-radius:var(--r-pill);background:rgba(148,163,184,.14);margin-top:12px;overflow:hidden}
 .prog span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--brand),var(--acc2));transform-origin:left;transform:scaleX(var(--k,0));transition:transform 900ms var(--ease-out)}
 .prog-t{display:flex;justify-content:space-between;font-size:var(--fs-2xs);color:var(--ink-3);margin-top:5px}
@@ -231,18 +216,12 @@ html.js .reveal.in{opacity:1;transform:none;transition:opacity 420ms var(--ease-
   box-shadow:0 0 34px -4px rgba(var(--acc),.6),inset 0 0 24px rgba(var(--acc),.2),inset 0 1px 0 rgba(255,255,255,.18);transition:opacity var(--dur-2) var(--ease-out)}
 .rs-card.active{background:linear-gradient(155deg,rgba(var(--acc),.32),rgba(var(--acc),.09) 60%,transparent),var(--surface)}
 .rs-card.active::after{opacity:1;animation:rs-breathe 3.6s ease-in-out infinite}
-/* the Loy Krathong day always glows warm so it is easy to find, brightest when chosen */
-.rs-card.rs-loy{background:radial-gradient(120% 80% at 85% 0%,rgba(255,190,90,.3),transparent 60%),linear-gradient(160deg,rgba(110,52,12,.62),rgba(36,18,10,.7) 65%),var(--surface)}
-.rs-card.rs-loy::after{opacity:.5;animation:rs-breathe-soft 3.6s ease-in-out infinite}
-.rs-card.rs-loy.active::after{opacity:1;animation-name:rs-breathe}
 @keyframes rs-breathe{0%,100%{opacity:.7}50%{opacity:1}}
-@keyframes rs-breathe-soft{0%,100%{opacity:.3}50%{opacity:.75}}
 .rs-day{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:var(--fs-xs);font-weight:700;color:var(--ink)}
 .rs-day .today{font-size:10.5px;font-weight:600;padding:0 6px;border-radius:var(--r-pill);background:rgba(var(--brand-rgb),.18);color:var(--brand)}
 .rs-hl{display:flex;align-items:center;gap:8px;font-size:var(--fs-sm);font-weight:700;color:var(--ink);line-height:1.3}
 .rs-hl i{flex:none;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;font-size:13px;color:#170c03;
   background:linear-gradient(140deg,rgba(255,255,255,.55),rgba(var(--acc),1) 45%);box-shadow:0 0 16px -2px rgba(var(--acc),.75)}
-.rs-loy .rs-hl,.rs-loy .rs-day{color:#ffe9c2}
 .rs-hl>span{flex:1;min-width:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .rs-route{font-size:var(--fs-2xs);color:var(--ink-3);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .rs-stats{margin-top:auto;display:flex;align-items:center;gap:8px;font-size:var(--fs-2xs);color:var(--ink-2);white-space:nowrap}
@@ -584,7 +563,7 @@ html:not(.js) .kmbar span{transform:scaleX(var(--k))}
 .seg button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);box-shadow:0 0 18px -4px rgba(var(--brand-rgb),.8)}
 .set-note{margin-top:14px;font-size:var(--fs-2xs);color:var(--ink-3)}
 @media (prefers-reduced-motion:reduce){
-  .rs-card.active::after,.rs-card.rs-loy::after,.rs-card.rs-loy.active::after{animation:none}
+  .rs-card.active::after{animation:none}
   .sheet[open]{animation:none}
   .gear i{transition:none}
 }
@@ -761,13 +740,12 @@ html.loy .tl-day[data-day="d4"] .xc{background:rgba(16,14,24,.8)}
 <header class="hdr glass-chrome" id="hdr">
   <div class="hdr-collapse"><div>
     <div class="hdr-chips">
-      <span class="hchip ev"><i class="fa-solid fa-bolt" aria-hidden="true"></i>XPeng G6 (510 KM)</span>
       <span class="hchip dt">20–25 พ.ย. 2026</span>
       <span class="hchip km">1,715 กม.</span>
     </div>
   </div></div>
   <div class="hdr-row">
-    <h1 id="appTitle"><span class="dot" aria-hidden="true"></span>Chaingrai Roadtrip 2026</h1>
+    <h1 id="appTitle"><span class="dot" aria-hidden="true"></span>ChiangRai Roadtrip 2026</h1>
     <button type="button" class="gear press" id="gearBtn" data-action="settings" aria-label="ตั้งค่า ธีมสีและแสงเรือง" aria-haspopup="dialog" aria-controls="settings" aria-expanded="false"><i class="fa-solid fa-gear" aria-hidden="true"></i></button>
   </div>
   <div class="search" role="search">
@@ -883,10 +861,10 @@ html.loy .tl-day[data-day="d4"] .xc{background:rgba(16,14,24,.8)}
   <div class="nav-track" id="navTrack">
     <span class="nav-ind" id="navInd" aria-hidden="true"></span>
     <button type="button" class="nav-btn" data-action="tab" data-tab="itinerary" aria-current="page"><i class="fa-solid fa-route" aria-hidden="true"></i><span>แผนเดินทาง</span></button>
-    <button type="button" class="nav-btn" data-action="tab" data-tab="ev"><i class="fa-solid fa-charging-station" aria-hidden="true"></i><span>จุดชาร์จ G6</span></button>
     <button type="button" class="nav-btn" data-action="tab" data-tab="food"><i class="fa-solid fa-utensils" aria-hidden="true"></i><span>ร้าน & คาเฟ่</span></button>
     <button type="button" class="nav-btn" data-action="tab" data-tab="sights"><i class="fa-solid fa-camera" aria-hidden="true"></i><span>ที่เที่ยว</span></button>
     <button type="button" class="nav-btn" data-action="tab" data-tab="summary"><i class="fa-solid fa-hotel" aria-hidden="true"></i><span>ที่พัก & งบ</span></button>
+    <button type="button" class="nav-btn" data-action="tab" data-tab="ev"><i class="fa-solid fa-charging-station" aria-hidden="true"></i><span>จุดชาร์จ G6</span></button>
   </div>
 </nav>
 
@@ -1372,7 +1350,13 @@ html.loy .tl-day[data-day="d4"] .xc{background:rgba(16,14,24,.8)}
 
       // ── มีคนในทริปไม่ทานเนื้อวัว: ตัดร้านก๋วยเตี๋ยวเนื้ออันเจริญออกจากคำแนะนำมื้อเที่ยงริมกว๊าน
       { arr:'itineraryItems', i:14, expect:{ id:15, details:'นั่งร้านบรรยากาศดีริมน้ำกว๊านพะเยา หรือเลือกทานก๋วยเตี๋ยวอันเจริญเฮียน้อยหลังตลาด (เนื้อเปื่อยเก่าแก่)' },
-        set:{ details:'นั่งร้านบรรยากาศดีริมน้ำกว๊านพะเยา กินปลาจากกว๊านไปพร้อมกับชมวิวดอยหลวง' } }
+        set:{ details:'นั่งร้านบรรยากาศดีริมน้ำกว๊านพะเยา กินปลาจากกว๊านไปพร้อมกับชมวิวดอยหลวง' } },
+      // ── ขนมจีนน้ำเงี้ยวป้าสุขหยุดทุกวันจันทร์ (Wongnai, Ryoii, Lemon8): เอาออกจากมื้อเช้าวันจันทร์ ย้ายไปเป็นทางเลือกบ่ายวันอาทิตย์ (ALT[10])
+      { arr:'itineraryItems', i:12, expect:{ id:13, title:'มื้อเช้า: ร้านลาบป้าไหล่ หรือ ขนมจีนน้ำเงี้ยวป้าสุข', subtitle:'เลือกทานอาหารเหนือพื้นบ้าน หรือขนมจีนน้ำเงี้ยวเจ้าดัง', details:'ร้านลาบป้าไหล่เปิดวันจันทร์ (เด่นลาบหมูคั่ว) หรือถ้าเลือกร้านป้าสุขต้องรีบไปตอนเปิด 09:30 น. เพราะคิวยาว' },
+        set:{ title:'มื้อเช้า: ร้านลาบป้าไหล่', subtitle:'อาหารเหนือพื้นบ้าน ร้านนี้เปิดวันจันทร์',
+              details:'ร้านลาบป้าไหล่เปิดวันจันทร์ (เด่นลาบหมูคั่ว) ส่วนขนมจีนน้ำเงี้ยวป้าสุขหยุดทุกวันจันทร์ ย้ายไปเป็นทางเลือกบ่ายวันอาทิตย์หลังงานแต่งแล้ว' } },
+      { arr:'foodGuideData', i:7, expect:{ name:'ขนมจีนน้ำเงี้ยวป้าสุข (ร้านแนะนำ)', hours:'09:30 - 14:30' },
+        set:{ hours:'09:30 - 14:30 (หยุดวันจันทร์)' } }
     ];
     (function applyFixes(){
       const A = { itineraryItems, evGuideData, foodGuideData, confirmedHotels };
@@ -1386,7 +1370,7 @@ html.loy .tl-day[data-day="d4"] .xc{background:rgba(16,14,24,.8)}
     // ───────────────────────── ENRICHMENT (v2) ─────────────────────────
     // ข้อมูลเดิมด้านบนห้ามแก้ ข้อมูลใหม่ทั้งหมดอยู่ใน object ด้านล่าง แล้ว merge ตอน boot
 
-    const APP_NAME = 'Chaingrai Roadtrip 2026';
+    const APP_NAME = 'ChiangRai Roadtrip 2026';
 
     const mapSearch = q => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
 
@@ -1475,7 +1459,7 @@ html.loy .tl-day[data-day="d4"] .xc{background:rgba(16,14,24,.8)}
       barrab:      { t:'food', z:'เชียงราย', fz:'เชียงราย', n:'บาร์ลาบ (Barrab)', note:'ลาบเหนือและอาหารพื้นเมืองรสจัดจ้าน ร้านดังในเมือง', tag:'อาหารเหนือ', hl:'top', q:'บาร์ลาบ เชียงราย', url:'https://www.google.com/maps/search/Barrab%20Restaurant%20%40%20ChiangRai/@19.9032741,99.8325130,17z', conf:'medium' },
       doichaang:   { t:'cafe', z:'เชียงราย', fz:'เชียงราย', n:'Doi Chaang Coffee (สาขาเชียงราย)', note:'กาแฟดอยช้างสาขาในเชียงราย หมุดอยู่ที่สาขาถนนเด่นห้า-ดงมะดะ ทางไปสิงห์ปาร์ค ควรเช็คก่อนไป', tag:'สายกาแฟ', q:'Doi Chaang Coffee Chiang Rai', url:'https://www.google.com/maps/search/Doi%20Chaang%20Coffee%20%28%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%95%E0%B8%B3%E0%B8%A3%E0%B8%B1%E0%B8%9A%29/@19.8406359,99.7182484,17z', conf:'low' },
       lalitta:     { t:'cafe', ref:true, n:'Lalitta Café (ลลิตาคาเฟ่)', note:'คาเฟ่บรรยากาศป่าหิมพานต์ มัทฉะและเค้ก', tag:'วิวสวย', url:'https://www.google.com/maps/search/?api=1&query=Lalitta+Cafe+เชียงราย' },
-      pasuk:       { t:'food', ref:true, n:'ขนมจีนน้ำเงี้ยวป้าสุข', note:'น้ำเงี้ยวเชียงรายแท้ ข้าวกั้นจิ๊น ไปตอนเปิดเพราะคิวยาว', hl:'top', url:'https://www.google.com/maps/search/?api=1&query=น้ำเงี้ยวป้าสุข+เชียงราย' },
+      pasuk:       { t:'food', ref:true, n:'ขนมจีนน้ำเงี้ยวป้าสุข', note:'น้ำเงี้ยวเชียงรายแท้ ข้าวกั้นจิ๊น ร้านปิด 14:30 และหยุดวันจันทร์ ออกจากงานแต่งแล้วไปต่อได้เลย', hl:'top', url:'https://www.google.com/maps/search/?api=1&query=น้ำเงี้ยวป้าสุข+เชียงราย' },
 
       // ── พะเยา ──
       srikomkham:  { t:'sight', z:'พะเยา', n:'วัดศรีโคมคำ (พระเจ้าตนหลวง)', note:'พระพุทธรูปองค์ใหญ่ที่สุดในล้านนา อยู่ริมกว๊าน', hl:'must', q:'วัดศรีโคมคำ พะเยา', url:'https://www.google.com/maps/search/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B9%82%E0%B8%84%E0%B8%A1%E0%B8%84%E0%B8%B3/@19.1765224,99.8896075,17z', conf:'high' },
@@ -1550,10 +1534,10 @@ html.loy .tl-day[data-day="d4"] .xc{background:rgba(16,14,24,.8)}
       7:['warorot','akhaama','watchediluang'],
       8:['maekhachan','doisaket','banhong'],
       9:['rongsuaten','baandam','singhapark'],
-      10:['lalitta','doichaang','watphrakaewcr'],
+      10:['pasuk','lalitta','doichaang','watphrakaewcr'],
       11:['rongsuaten','barrab'],
       12:['clocktower','barrab'],
-      13:['pasuk','rongkhun','doichaang'],
+      13:['rongkhun','doichaang'],
       14:['srikomkham','tilok','analayo','chomthongpy'],
       15:['lakecafe','srikomkham'],
       16:['wongburi','charlotte','phaemuangphi'],
@@ -2680,7 +2664,7 @@ html.loy .tl-day[data-day="d4"] .xc{background:rgba(16,14,24,.8)}
 const D = document;
 const $ = (s, r) => (r || D).querySelector(s);
 const $$ = (s, r) => Array.from((r || D).querySelectorAll(s));
-const TABS = ['itinerary', 'ev', 'food', 'sights', 'summary'];
+const TABS = ['itinerary', 'food', 'sights', 'summary', 'ev'];
 const DAY_MS = 86400000;
 
 if (typeof itineraryItems === 'undefined' || typeof DAYS === 'undefined') {
@@ -2962,7 +2946,7 @@ function renderHero(force) {
   const key = st.mode + '|' + (st.cur ? st.cur.id : '') + '|' + (st.next ? st.next.id : '') + '|' + (st.daysLeft || '') + '|' + (st.done || '');
   if (!force && key === heroKey) return;
   heroKey = key;
-  const appName = typeof APP_NAME === 'string' && APP_NAME ? APP_NAME : 'Chaingrai Roadtrip 2026';
+  const appName = typeof APP_NAME === 'string' && APP_NAME ? APP_NAME : 'ChiangRai Roadtrip 2026';
   const first = items[0];
   let h = '';
   if (st.mode === 'before') {
@@ -2974,7 +2958,6 @@ function renderHero(force) {
     h += '<div class="batt" aria-hidden="true"><span class="batt-body"><span class="batt-fill" id="heroBatt" style="--k:1"></span></span><span class="batt-cap"></span></div>';
     h += '<div class="batt-t">' + tw(abbrDate(first.dateLabel) + ' ' + first.time.split(' - ')[0] + ' ออกจาก กทม. (แบต 100%)') + '</div>';
     h += heroStats();
-    h += loyCta();
   } else if (st.mode === 'during') {
     const di = DAYS.findIndex(d => d.key === st.dayKey) + 1;
     const target = st.next || st.cur;
@@ -2989,7 +2972,6 @@ function renderHero(force) {
       h += '<a class="btn-hero press" id="heroNav" href="' + esc(target.mapUrl) + '"' + ext + ' data-ripple>' + ic('fa-solid fa-diamond-turn-right') +
         '<span>' + (st.next ? 'นำทางไปจุดถัดไป' : 'นำทางไปจุดนี้') + '</span></a>';
     }
-    if (st.dayKey !== 'd4' && st.dayKey !== 'd5') h += loyCta();
   } else {
     h += '<div class="hero-eyebrow">' + ic('fa-solid fa-flag-checkered', ' style="color:var(--ev)"') + '<span>' + esc(appName) + '</span></div>';
     h += '<div class="hero-big">ทริปจบแล้ว · <span class="num">' + fmtN(TOTAL_KM) + '</span> กม.</div>';
@@ -3009,13 +2991,6 @@ function renderHero(force) {
       requestAnimationFrame(() => { b.style.setProperty('--k', '1'); b.classList.add('charging'); });
     }
   }
-}
-// ปุ่มเข้าโหมดลอยกระทงที่หาง่าย (ผู้ใช้บอกว่าหาหน้าที่มีเพลงไม่เจอ) · ใช้ action เดียวกับการแตะการ์ดวันที่ 24
-function loyCta() {
-  return '<button type="button" class="loy-cta press" data-action="day" data-day="d4" data-ripple aria-label="เปิดโหมดลอยกระทง วันที่ 24 พฤศจิกายน พร้อมเพลง">' +
-    '<span class="lc-ic" aria-hidden="true">🏮</span>' +
-    '<span class="lc-tx"><b>โหมดลอยกระทง</b><small>' + tw('อ. 24 พ.ย. โคมลอย + เพลง') + '</small></span>' +
-    ic('fa-solid fa-music lc-note') + '</button>';
 }
 function heroStats() {
   return '<div class="hstats">' +
@@ -3039,9 +3014,9 @@ function renderRouteStrip() {
   h += DAYS.map(d => {
     const m = d.hl && d.hl.main;
     const acc = DAY_ACC[d.key] ? ' style="--acc:' + DAY_ACC[d.key] + '"' : '';
-    return '<button type="button" class="rs-card press' + (d.key === 'd4' ? ' rs-loy' : '') + '" data-action="day" data-day="' + esc(d.key) + '" aria-pressed="' + (S.day === d.key) + '" aria-label="' + esc(d.pill + (m ? ' ไฮไลต์ ' + m.label : '')) + '"' + acc + (m && m.why ? ' title="' + esc(m.why) + '"' : '') + '>' +
+    return '<button type="button" class="rs-card press" data-action="day" data-day="' + esc(d.key) + '" aria-pressed="' + (S.day === d.key) + '" aria-label="' + esc(d.pill + (m ? ' ไฮไลต์ ' + m.label : '')) + '"' + acc + (m && m.why ? ' title="' + esc(m.why) + '"' : '') + '>' +
       '<span class="rs-day"><span>' + tw(pillShort(d)) + '</span>' + (todayKey === d.key ? '<span class="today">วันนี้</span>' : '') +
-        (d.key === 'd4' ? '<span class="rs-music">' + ic('fa-solid fa-music') + 'มีเพลง</span>' : '') + '</span>' +
+        '</span>' +
       (m ? '<span class="rs-hl">' + ic('fa-solid ' + esc(m.icon || 'fa-star')) + '<span>' + esc(m.label) + '</span></span>' : '') +
       '<span class="rs-route">' + tw(d.route) + '</span>' +
       '<span class="rs-stats"><span><b class="rs-km" data-km="' + (+d.km || 0) + '">' + fmtN(d.km) + '</b> กม.</span><span>' + ic('fa-solid fa-bolt bolt') + '×' + chargesOn(d.key) + '</span></span>' +
@@ -3836,7 +3811,7 @@ D.addEventListener('visibilitychange', () => {
    ===================================================================== */
 function boot() {
   try { if (typeof validateData === 'function') validateData(); } catch (err) { console.error('[v2] validateData failed', err); }
-  const appName = typeof APP_NAME === 'string' && APP_NAME ? APP_NAME : 'Chaingrai Roadtrip 2026';
+  const appName = typeof APP_NAME === 'string' && APP_NAME ? APP_NAME : 'ChiangRai Roadtrip 2026';
   D.title = appName;
   $('#appTitle').innerHTML = '<span class="dot" aria-hidden="true"></span>' + esc(appName);
 
